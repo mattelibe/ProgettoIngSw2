@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <link rel="stylesheet" type="text/css" href="template.css">  
+      <meta charset="utf-8">
+      <title> Posizione delle segreterie </title>
+   </head>
+   <body>
+    <body bgcolor=#660033>
+       <a href="home.html">  <img src="./img/altosx.jpg">  </a>
+       <p id="topic"> <b></b></p>
+       <div class="container1">       
+           <div>           
+               <p style="color:white;"><b>Qui puoi trovare le segreterie di UniTn</b></p>        
+               <br>         
+               <div id="map" style="width:800px;height:400px;background:black;"></div>
+               <script type="text/javascript">
+                function myMap() {
+                  var EconManag= new google.maps.LatLng(46.0660979,11.1175472);
+                  var LettFilo= new google.maps.LatLng(46.0677867,11.1170472); 
+                  var Ing= new google.maps.LatLng(46.0649475,11.1375803);
+                  var MatFisInf= new google.maps.LatLng(46.0642856,11.1480348);
+                  var Psic= new google.maps.LatLng(45.8937054,11.0413443);
+
+                  var mapOptions = {
+                    center: new google.maps.LatLng(46.067, 11.133),
+                    zoom: 14,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP //HYBRID in alternativa
+                  }
+                  var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+                                  var marker = new google.maps.Marker({ position: EconManag,
+                                    map: map,
+                                    title: 'Economia e management' });
+                                  var marker = new google.maps.Marker({ position: LettFilo,
+                                    map: map, 
+                                    title: 'Lettere e filosofia' });
+                                  var marker = new google.maps.Marker({ position: Ing,
+                                    map: map,
+                                    title: 'Ingegneria civile ambientale meccanica' });
+                                  var marker = new google.maps.Marker({ position: MatFisInf,
+                                    map: map, 
+                                    title: 'Matematica, fisica, biologia, informatica' });
+                                  var marker = new google.maps.Marker({ position: Psic,
+                                    map: map, 
+                                    title: 'Psicologia e scienze cognitive e centro mente e cervello' });
+                }
+
+              </script>
+              <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDz60qVBS5do1XroBnBrzNvAIDrCv1OKIQ&callback=myMap">           
+              </script>
+           </div>
+           <p style="color:white;"><b>Economia e management - Via Vigilio Inama 5, Trento</b></p> 
+           <p style="color:white;"><b>Lettere e filosofia - Via Tommaso Gar 14, Trento</b></p> 
+           <p style="color:white;"><b>Ingegneria civile ambientale meccanica - Via Mesiano 77, Trento</b></p> 
+           <p style="color:white;"><b>Matematica, fisica, biologia, ingegneria dell'informazione - Via Sommarive 5, Trento</b></p> 
+           <p style="color:white;"><b>Psicologia e scienze cognitive e centro mente e cervello - Corso Bettini 84, Rovereto</b></p> 
+       </div>
+</body>
+</html>
