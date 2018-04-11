@@ -11,15 +11,15 @@
 		<img class="centered" src="./img/logo.jpg" height="20">
 	</div>
 		
-	<div class="container1"> 	
-		<form action="http://127.0.0.1:80/question" method='get'>
-  			<input type="text" name="questionValue" size="50">
+	<div class="container1">
+		<form onsubmit="location.href='http://localhost:3000/topic/' + document.getElementById('qS').value; return false;" method='get'>
+  			<input id="qS" type="text" name="questionValue" size="50">
   			<input type="submit" value="Invia">
 		</form>	
 	</div>
 
     <div class="bottoni">
-		<form action="http://127.0.0.1:80/search" method='get'>
+		<form action="" method='get'>
 			<input type="submit" value="LAUREA">
 			<input type="submit" value="TASSE">
 			<input type="submit" value="ERASMUS">
@@ -34,6 +34,6 @@
     </div>
 
     <div style="position: absolute; bottom: 20px; position: center;" id ="Linknotfound">
-    			 	<a href="#" style="color:white;"> Non hai trovato quello che cercavi ? </a>	
-    	 </div>
+    			 	<a href="#" style="color:white;"> Non hai trovato quello che cercavi ? </a>
+    </div>
 </body>
