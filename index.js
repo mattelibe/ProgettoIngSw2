@@ -28,12 +28,29 @@ app.get('/segreteria', function(req,res)
     res.render("segreteria.html");
 });
 
-app.get('/topic/t1', function(req,res)
+app.get('/topic/erasmus', function(req,res)
 {
-    console.log("GET TOPIC");
-    res.render("topic/t1.html");
+    console.log("GET ERASMUMS");
+    res.render("topic/erasmus.html");
 });
 
+app.get('/topic/laurea', function(req,res)
+{
+    console.log("GET LAUREA");
+    res.render("topic/laurea.html");
+});
+
+app.get('/topic/tasse', function(req,res)
+{
+    console.log("GET TASSE");
+    res.render("topic/tasse.html");
+});
+
+app.get('/topic/tirocini', function(req,res)
+{
+    console.log("GET TIROCINI");
+    res.render("topic/tirocini.html");
+});
 /*app.get('/topic/:questionValue', function(req, res)
 {
         console.log(req.params.questionValue);
