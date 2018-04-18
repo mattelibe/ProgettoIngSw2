@@ -7,8 +7,6 @@ app.set('views', __dirname + '/FrontEnd');
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
 app.use(bodyParser.urlencoded({ extended: false }));
-var fs = require('fs');
-var path = "";
 
 // Carico pagina principale
 app.get('/', function( req, res)
@@ -20,14 +18,21 @@ app.post('/home', function(req, res)
 {
     /*var data = req.body.username + " " + req.body.password;
     console.log(data + ' Submitted Successfully!');*/
+    console.log("POST HOME");
     res.render('home.html');
+});
+
+app.get('/segreteria', function(req,res)
+{
+    console.log("GET SEGRETERIA");
+    res.render("segreteria.html");
 });
 
 app.get('/topic/t1', function(req,res)
 {
+    console.log("GET TOPIC");
     res.render("topic/t1.html");
 });
-
 
 /*app.get('/topic/:questionValue', function(req, res)
 {
