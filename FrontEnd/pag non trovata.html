@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Topic scelto</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <body bgcolor=#660033>
+        <a href="home.html">  <img src="./Topic/img/altosx.jpg">  </a>
+        <br>
+        <div class="container-fluid">
+            <h2 style="color:white;">Non abbiamo trovato quello che cercavi</h2>
+            <div class="row">
+
+            	<div class="container1">
+		<form onsubmit="location.href='http://localhost:3000/topic/' + document.getElementById('qS').value.toLowerCase(); return false;" method='get'>
+  			<input id="qS" type="text" name="questionValue" size="50"; placeholder= 'Prova a cercare ancora'>
+  			<input type="submit" value="Invia">
+		</form>	
+	</div>
+
+
+	<br>
+	<br>
+			</div><div id ="Linknotfound">
+                    <a href="#" style="color:white;"> Oppure vuoi contattare la segreteria ? </a> 
+         </div>
+    </body>
+</html>
