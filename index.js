@@ -11,13 +11,20 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // Carico pagina principale
 app.get('/', function( req, res)
 {
+        console.log("GET LOGIN");
     res.render("login.html");
+});
+
+app.get('/home', function(req, res)
+{
+    console.log("GET HOME");
+    res.render('home.html');
 });
 
 app.post('/home', function(req, res)
 {
-    /*var data = req.body.username + " " + req.body.password;
-    console.log(data + ' Submitted Successfully!');*/
+    var data = req.body.username + " " + req.body.password;
+    console.log(data + ' Submitted Successfully!');
     console.log("POST HOME");
     res.render('home.html');
 });
@@ -28,7 +35,7 @@ app.get('/segreteria', function(req,res)
     res.render("segreteria.html");
 });
 
-app.get('/topic/erasmus', function(req,res)
+/*app.get('/topic/erasmus', function(req,res)
 {
     console.log("GET ERASMUMS");
     res.render("topic/erasmus.html");
@@ -50,14 +57,21 @@ app.get('/topic/tirocini', function(req,res)
 {
     console.log("GET TIROCINI");
     res.render("topic/tirocini.html");
-});
-/*app.get('/topic/:questionValue', function(req, res)
-{
-        console.log(req.params.questionValue);
-        var topic = +req.params.questionValue+".html";
-        res.render("/topic/"+ topic);
-        //res.redirect(301, topic);
 });*/
+app.get('/topic/:questionValue', function(req, res)
+{
+        console.log("GET " + req.params.questionValue);
+        var topic = req.params.questionValue+".html";
+        res.render(("topic/"+ topic),function (err, html)
+            {
+                if(err)
+                {
+                    res.render("segreteria.html");
+                }
+                res.send(html);
+            }
+        );
+});
 
 app.listen(3000, function () {
     console.log('Example app listening on port 3000.');
