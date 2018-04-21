@@ -1,8 +1,9 @@
 var express = require('express');
 var bodyParser = require("body-parser");
 var app = express();
+
 app.set('port', (process.env.PORT || 3000));
-//app.use(express.static(__dirname + '/public'));
+app.use(express.static('public'));
 app.set('views', __dirname + '/FrontEnd');
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
@@ -11,15 +12,16 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // Carico pagina principale
 app.get('/', function( req, res)
 {
-        console.log("GET LOGIN");
+    console.log("GET LOGIN");
     res.render("login.html");
 });
 
+/*
 app.get('/home', function(req, res)
 {
     console.log("GET HOME");
     res.render('home.html');
-});
+});*/
 
 app.post('/home', function(req, res)
 {
