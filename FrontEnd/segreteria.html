@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
    <head>
-      <link rel="stylesheet" type="text/css" href="template.css">  
+      <link rel="stylesheet" type="text/css" href="../public/css/template.css">
       <meta charset="utf-8">
       <title> Chiedi alla segreteria </title>
    </head>
    <body>
     <body bgcolor=#660033>
-       <a href="home.html">  <img src="./topic/img/altosx.jpg">  </a>
+       <img src="/img/altosx.jpg">
        <p id="topic"> <b></b></p>
        <div class="container1">       
            <div>           
@@ -15,10 +15,10 @@
                <br>    
                <p style="color:white;">Chiedi alla segreteria tramite mail </p>
                <div>               
-                   <form action="https://mail.google.com/mail/u/0/#inbox?compose=new">    
-                       <textarea rows="20" cols=80">
+                   <form action="send" method="post">
+                       <textarea name=mesg" rows="20" cols=80">
                        </textarea><br>                   
-                       <input type="submit" value="Invia">
+                       <input type="submit" onclick="alert('Messaggio inviato, ritorno alla pagina principale')" value="Invia">
                    </form>
                </div>
                <p style="color:white;"> Oppure recati in uno degli uffici </p>
