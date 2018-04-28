@@ -3,6 +3,7 @@
     <head>
         <title>Topic scelto</title>
         <meta charset="UTF-8">
+        <script type="text/javascript" src="/script/pathManager.js"></script>
     </head>
     <body>
         <body bgcolor=#660033>
@@ -11,19 +12,18 @@
         <div class="container-fluid">
             <h2 style="color:white;">Non abbiamo trovato quello che cercavi</h2>
             <div class="row">
-
             	<div class="container1">
-		<form onsubmit="location.href='http://localhost:3000/topic/' + document.getElementById('qS').value.toLowerCase(); return false;" method='get'>
-  			<input id="qS" type="text" name="questionValue" size="50"; placeholder= 'Prova a cercare ancora'>
-  			<input type="submit" value="Invia">
-		</form>	
-	</div>
-
-
-	<br>
-	<br>
-			</div><div id ="Linknotfound">
-                    <a href="#" onclick="location.href='http://localhost:3000/segreteria'; return false;" style="color:white;"> Oppure vuoi contattare la segreteria ? </a>
-         </div>
+		            <form onsubmit="return searchBar()" method='get'>
+  			            <input id="qS" type="text" name="questionValue" size="50" placeholder="Prova a cercare ancora">
+  			            <input type="submit" value="Invia">
+		            </form>
+	            </div>
+            </div>
+        </div>
+	    <br>
+	    <br>
+        <div id ="Linknotfound">
+            <a  href="/segreteria" style="color:white;"> Oppure vuoi contattare la segreteria ? </a>
+        </div>
     </body>
 </html>

@@ -3,27 +3,27 @@
 <head>
 	<title>Home</title>
 	<link rel="stylesheet" type="text/css" href="/css/style.css">
+	<script type="text/javascript" src="/script/pathManager.js"></script>
 </head>
 
-<body>
+<body onload="buttonBar()">
 	<body bgcolor=#660033>
 	<div class="container">
 		<img class="centered" src="/img/logo.jpg" height="400">
 	</div>
-		
 	<div class="container1">
-		<form onsubmit="location.href='http://localhost:3000/topic/' + document.getElementById('qS').value.toLowerCase(); return false;" method='get'>
+		<form onsubmit="return searchBar()" method='get'>
   			<input id="qS" type="text" name="questionValue" size="50">
   			<input type="submit" value="Invia">
 		</form>	
 	</div>
 
     <div class="bottoni">
-		<form action="" method='get'>
-			<input type="submit" value="LAUREA" onclick="location.href='http://localhost:3000/topic/laurea'; return false;">
-			<input type="submit" value="TASSE" onclick="location.href='http://localhost:3000/topic/tasse'; return false;">
-			<input type="submit" value="ERASMUS" onclick="location.href='http://localhost:3000/topic/erasmus'; return false;">
-			<input type="submit" value="TIROCINI" onclick="location.href='http://localhost:3000/topic/tirocini'; return false;">
+		<form id="buttons" onsubmit="return buttonBar()" method='get'>
+			<input id="1" type="submit" value="LAUREA">
+			<input id="2" type="submit" value="TASSE" >
+			<input id="3" type="submit" value="ERASMUS" >
+			<input id="4" type="submit" value="TIROCINI">
 		</form>
     </div>
 
@@ -34,6 +34,6 @@
     </div>
 
     <div style="position: absolute; bottom: 20px; position: center;" id ="Linknotfound">
-    			 	<a href="" onclick="location.href='http://localhost:3000/segreteria'; return false;" style="color:white;"> Non hai trovato quello che cercavi ? </a>
+    			 	<a href="/segreteria"  style="color:white;"> Non hai trovato quello che cercavi ? </a>
     </div>
 </body>

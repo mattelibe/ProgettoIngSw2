@@ -9,7 +9,8 @@ app.set('views', __dirname + '/FrontEnd');
 app.engine('html', require('ejs').renderFile);
 //Gestione informazioni url( login, ricerca)
 app.use(bodyParser.urlencoded({ extended: false }));
-
+//Settaggio porta per gestione sia locale che su heroku
+app.set('port', process.env.PORT || 3000);
 // Carico pagina principale
 app.get('/', function( req, res)
 {
@@ -76,10 +77,6 @@ app.post('/send', function(req, res)
     res.redirect("/home");  //Ritorno alla home dopo l'invio del messaggio
 });
 
-/*app.get('/topic/laurea', function(req, res)
-{
-    res.render("topic/laurea.html");
-});*/
 //Gestione ricerca
 app.get('/topic/:questionValue', function(req, res)
     {
@@ -104,7 +101,7 @@ app.get('/topic/:questionValue', function(req, res)
          );
 });
 //Funzione di ascolto
-/*app.listen(3000, function () {
-    console.log('Example app listening on port 3000.');
-});*/
-app.listen(process.env.PORT || 5000);
+app.listen(app.get('port'),function()
+{
+    console.log('Listening on port '+ app.get('port'));
+});
