@@ -1,10 +1,20 @@
 //Funzione per gestione barra di ricerca
 function searchBar()
 {
+    //Variabile che gestisce il path
+    var response;
+    //Verifico che la pagina da cui effettuo la ricerca sia la home
+    if(document.body.contains(document.getElementById('homeSearch')))
+    {
+        //Cerco il file accedendo alla cartella topic
+        response ='topic/'+document.getElementById('qS').value;
+    }
+    else
+    {
+        //Cerco il file senza accesso (ricerca effettuata da pag_non_trovata)
+        response = document.getElementById('qS').value;
+    }
 
-    //Lettura del testo nella barra di ricerca
-    var response ='topic/'+document.getElementById('qS').value;
-    //console.log(response);
     //Reindirizzamento alla pagina corrispondente (pagine inesistenti gestite dal server)
     location = response;
     return false;
