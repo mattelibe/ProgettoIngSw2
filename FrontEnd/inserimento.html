@@ -15,7 +15,7 @@
 
                <p style="color:white;"> Qual'è l'argomento ? </p>
 
-              <form name="argomento">
+              <form name="inserimento">
                 <select required>
                   <option value="" disabled selected hidden> Seleziona un argomento </option>
                   <option value="volvo"> Tasse </option>
@@ -23,38 +23,29 @@
                   <option value="mercedes"> Laurea </option>
                   <option value="audi"> Erasmus </option>
                 </select>
-              </form>
-
+              
                <p style="color:white;"> Qual'è la domanda ? </p>
-               <div>               
-                   <form name="domanda" action="send" method="post">
-                       <textarea name="question" rows="2" cols=80">
-                       </textarea><br>                   
-                   </form>
+               <div>                      
+                       <textarea name="question" rows="2" cols="80"></textarea><br>                      
                </div>
 
                <p style="color:white;"> Qual'è risposta ? </p>
                <div>               
-               <div>               
-                   <form name= "risposta" action="send" method="post">
-                       <textarea name="answer" rows="20" cols=80">
-                       </textarea><br>                   
-                   </form>
+                       <textarea name="answer" rows="20" cols="80"></textarea><br>
                </div>
                
                <br>  
 
                <p style="color:white;"> Carica una video guida (Se presente) </p>
 
-               <form name="video" action="upload.php" method="post" enctype="multipart/form-data">
                 <p style="color:white;"> Seleziona il video da caricare: </p>
                 <input type="file" accept=".mkv, .avi, .mp4, .gif, .flv, .gifv|video/*" name="videoToUpload" id="videoToUpload">
               </form>
               <br>
-              
+             </div> 
 
 <input type="submit" onclick="alert('Domanda aggiunta, ritorno alla pagina principale')" value="Invia">
-           </div>
+           
        </div>
 </body>
 </html>
