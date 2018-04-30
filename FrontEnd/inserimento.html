@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <link rel="stylesheet" type="text/css" href="/css/template.css">
+      <meta charset="utf-8">
+      <title> Inserisci una domanda </title>
+   </head>
+   <body>
+    <body bgcolor=#660033>
+       <img src="/img/logo.jpg">
+       <p id="topic"> <b></b></p>
+       <div class="container1">       
+           <div>           
+               <h1><p style="color:white;"> Usa questa pagina per inserire una domanda </p></h1><br>
+
+               <p style="color:white;"> Qual'è l'argomento ? </p>
+
+              <form name="argomento">
+                <select required>
+                  <option value="" disabled selected hidden> Seleziona un argomento </option>
+                  <option value="volvo"> Tasse </option>
+                  <option value="saab"> Tirocinio </option>
+                  <option value="mercedes"> Laurea </option>
+                  <option value="audi"> Erasmus </option>
+                </select>
+              </form>
+
+               <p style="color:white;"> Qual'è la domanda ? </p>
+               <div>               
+                   <form name="domanda" action="send" method="post">
+                       <textarea name="question" rows="2" cols=80">
+                       </textarea><br>                   
+                   </form>
+               </div>
+
+               <p style="color:white;"> Qual'è risposta ? </p>
+               <div>               
+               <div>               
+                   <form name= "risposta" action="send" method="post">
+                       <textarea name="answer" rows="20" cols=80">
+                       </textarea><br>                   
+                   </form>
+               </div>
+               
+               <br>  
+
+               <p style="color:white;"> Carica una video guida (Se presente) </p>
+
+               <form name="video" action="upload.php" method="post" enctype="multipart/form-data">
+                <p style="color:white;"> Seleziona il video da caricare: </p>
+                <input type="file" accept=".mkv, .avi, .mp4, .gif, .flv, .gifv|video/*" name="videoToUpload" id="videoToUpload">
+              </form>
+              <br>
+              
+
+<input type="submit" onclick="alert('Domanda aggiunta, ritorno alla pagina principale')" value="Invia">
+           </div>
+       </div>
+</body>
+</html>
