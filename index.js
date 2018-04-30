@@ -1,6 +1,7 @@
 var express = require('express');
 var bodyParser = require("body-parser");
 var nodemailer = require('nodemailer');
+var vectorUsr = ['se2testingprj1@gmail.com'], vectorPswrd = ['w6tc+5C'];
 var app = express();
 //Gestione dati statici (immagini, css)
 app.use(express.static('public'));
@@ -21,10 +22,27 @@ app.get('/', function( req, res)
 //Accesso home mediante POST
 app.post('/home', function(req, res)
 {
+    if( (vectorUsr.indexOf(req.body.username)!= -1) && (vectorPswrd.indexOf(req.body.password) != -1))
+    {
+        console.log(req.body.username + ' submitted Successfully!');
+        console.log("POST HOME");
+        res.render('home.html');
+    }
+    else
+    {
+        res.render('login.html');
+    }
+    //checkData.checkLogin(vectorUsr, vectorPswrd,req.body.username,req.body.password );
+    /*if(checkData.checkLogin(vectorUsr, vectorPswrd,req.body.username,req.body.password ))
+    {
+        console.log(req.body.username + ' submitted Successfully!');
+        console.log("POST HOME");
+        res.render('home.html');
+    }
     var data = req.body.username + " " + req.body.password;
     console.log(data + ' Submitted Successfully!');
     console.log("POST HOME");
-    res.render('home.html');
+    res.render('home.html');*/
 });
 
 //Accesso home mediante GET
@@ -59,7 +77,7 @@ app.post('/send', function(req, res)
     });
     // Creazione mail
     var mailOptions = {
-        from: '"Test" <se2testingprj@gmail.com>', // mittente
+        from: '"Domanda segreteria" <se2testingprj@gmail.com>', // mittente
         to: 'bendadavide@gmail.com', // destinatario
         subject: 'Domanda segreteria', // Oggetto della mail
         text: req.body.mesg // Messaggio presente nel form della pagina della segreteria
@@ -72,7 +90,6 @@ app.post('/send', function(req, res)
         if (error) {
             return console.log(error);
         }
-        console.log('Message sent: %s', info.messageId);
     });
     res.redirect("/home");  //Ritorno alla home dopo l'invio del messaggio
 });
