@@ -1,0 +1,24 @@
+body
+{
+    background-color: #682340;
+    margin: auto;
+    width: 40%;
+}
+h1,h2,p
+{
+    color:white;
+    margin: auto;
+}
+a.linkNotFound
+{
+    color: white;
+    position: absolute;
+    bottom: 20px;
+}
+div.map
+{
+    width: 590px;
+    height:400px;
+    background:black;
+    margin: auto;
+}

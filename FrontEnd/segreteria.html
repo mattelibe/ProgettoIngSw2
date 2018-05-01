@@ -1,76 +1,84 @@
 <!DOCTYPE html>
 <html>
    <head>
-      <link rel="stylesheet" type="text/css" href="../public/css/style.css">
+      <link rel="stylesheet" type="text/css" href="/css/centeredStyle.css">
       <meta charset="utf-8">
       <title> Chiedi alla segreteria </title>
    </head>
    <body>
-    <body bgcolor=#660033>
        <img src="/img/logo.jpg">
        <p id="topic"> <b></b></p>
-       <div class="container1">       
-           <div>           
-               <p style="color:white;"><b>Non hai trovato quello che stavi cercando?</b></p>        
-               <br>    
-               <p style="color:white;">Chiedi alla segreteria tramite mail </p>
-               <div>               
-                   <form action="send" method="post">
-                       <textarea name="mesg" rows="20" cols=80">
-                       </textarea><br>                   
-                       <input type="submit" onclick="alert('Messaggio inviato, ritorno alla pagina principale')" value="Invia">
-                   </form>
-               </div>
-               <p style="color:white;"> Oppure recati in uno degli uffici </p>
-               <br>           
-               <br>       
-           </div>
+       <div>
+            <p> <b>Non hai trovato quello che stavi cercando?</b></p>
+            <br>
+            <p> Chiedi alla segreteria tramite mail </p>
+            <div>
+                <form action="send" method="post">
+                    <textarea name="mesg" rows="20" cols=80">
+                    </textarea><br>
+                    <input type="submit" onclick="alert('Messaggio inviato, ritorno alla pagina principale')" value="Invia">
+                </form>
+            </div>
        </div>
-       <div class="container1">       
-           <div>           
-               <p style="color:white;"><b>Qui puoi trovare le segreterie di UniTn</b></p>        
-               <br>         
-               <div id="map" style="width:800px;height:400px;background:black;"></div>
-               <script type="text/javascript">
-                function myMap() {
-                  var EconManag= new google.maps.LatLng(46.0660979,11.1175472);   //a posto
-                  var LettFilo= new google.maps.LatLng(46.0677867,11.1170472);   //a posto
-                  var Ing= new google.maps.LatLng(46.065339, 11.138995);          //a posto
-                  var MatFisInf= new google.maps.LatLng(46.066890, 11.150425);  //a posto
-                  var Psic= new google.maps.LatLng(45.8937054,11.0413443);  //a posto
-
-                  var mapOptions = {
-                    center: new google.maps.LatLng(46.067, 11.133),
-                    zoom: 14,
-                    mapTypeId: google.maps.MapTypeId.ROADMAP //HYBRID in alternativa
-                  }
-                  var map = new google.maps.Map(document.getElementById("map"), mapOptions);
-                                  var marker = new google.maps.Marker({ position: EconManag,
+       <br>
+       <div>
+            <p>Oppure recati in una delle segreterie di UniTn </p>
+            <div id="map" class="map"></div>
+            <script type="text/javascript">
+                function myMap()
+                {
+                    var EconManag= new google.maps.LatLng(46.0660979,11.1175472);   //a posto
+                    var LettFilo= new google.maps.LatLng(46.0677867,11.1170472);   //a posto
+                    var Ing= new google.maps.LatLng(46.065339, 11.138995);          //a posto
+                    var MatFisInf= new google.maps.LatLng(46.066890, 11.150425);  //a posto
+                    var Psic= new google.maps.LatLng(45.8937054,11.0413443);  //a posto
+                    var mapOptions =
+                    {
+                        center: new google.maps.LatLng(46.067, 11.133),
+                        zoom: 14,
+                        mapTypeId: google.maps.MapTypeId.ROADMAP //HYBRID in alternativa
+                    }
+                    var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+                    var marker = new google.maps.Marker(
+                                 {
+                                    position: EconManag,
                                     map: map,
-                                    title: 'Economia e management' });
-                                  var marker = new google.maps.Marker({ position: LettFilo,
+                                    title: 'Economia e management'
+                                 });
+                    var marker = new google.maps.Marker(
+                                 {
+                                   position: LettFilo,
+                                   map: map,
+                                   title: 'Lettere e filosofia'
+                                 });
+                    var marker = new google.maps.Marker(
+                                 {
+                                   position: Ing,
+                                   map: map,
+                                   title: 'Ingegneria civile ambientale meccanica'
+                                 });
+                    var marker = new google.maps.Marker(
+                                 {
+                                    position: MatFisInf,
                                     map: map, 
-                                    title: 'Lettere e filosofia' });
-                                  var marker = new google.maps.Marker({ position: Ing,
-                                    map: map,
-                                    title: 'Ingegneria civile ambientale meccanica' });
-                                  var marker = new google.maps.Marker({ position: MatFisInf,
+                                    title: 'Matematica, fisica, biologia, informatica'
+                                 });
+                    var marker = new google.maps.Marker(
+                                 {
+                                    position: Psic,
                                     map: map, 
-                                    title: 'Matematica, fisica, biologia, informatica' });
-                                  var marker = new google.maps.Marker({ position: Psic,
-                                    map: map, 
-                                    title: 'Psicologia e scienze cognitive e centro mente e cervello' });
+                                    title: 'Psicologia e scienze cognitive e centro mente e cervello'
+                                 });
                 }
-
               </script>
               <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDz60qVBS5do1XroBnBrzNvAIDrCv1OKIQ&callback=myMap">           
               </script>
            </div>
-           <p style="color:white;"><b>Economia e management - Via Vigilio Inama 5, Trento</b></p> 
-           <p style="color:white;"><b>Lettere e filosofia - Via Tommaso Gar 14, Trento</b></p> 
-           <p style="color:white;"><b>Ingegneria civile ambientale meccanica - Via Mesiano 77, Trento</b></p> 
-           <p style="color:white;"><b>Matematica, fisica, biologia, ingegneria dell'informazione - Via Sommarive 5, Trento</b></p> 
-           <p style="color:white;"><b>Psicologia e scienze cognitive e centro mente e cervello - Corso Bettini 84, Rovereto</b></p> 
+           <p><b>Economia e management - Via Vigilio Inama 5, Trento</b></p>
+           <p><b>Lettere e filosofia - Via Tommaso Gar 14, Trento</b></p>
+           <p><b>Ingegneria civile ambientale meccanica - Via Mesiano 77, Trento</b></p>
+           <p><b>Matematica, fisica, biologia, ingegneria dell'informazione - Via Sommarive 5, Trento</b></p>
+           <p><b>Psicologia e scienze cognitive e centro mente e cervello - Corso Bettini 84, Rovereto</b></p>
        </div>
 </body>
 </html>

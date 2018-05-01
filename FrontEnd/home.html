@@ -2,38 +2,26 @@
 <html>
 <head>
 	<title>Home</title>
-	<link rel="stylesheet" type="text/css" href="../public/css/style.css">
+	<link rel="stylesheet" type="text/css" href="/css/centeredStyle.css">
 	<script type="text/javascript" src="/script/script.js"></script>
 </head>
 
 <body onload="buttonBar()">
-	<body bgcolor=#660033>
-	<div class="container">
-		<img class="centered" src="/img/logo.jpg" height="400">
-	</div>
-	<div class="container1">
-		<form id="homeSearch" onsubmit="return searchBar()" method='get'>
-  			<input id="qS" type="text" name="questionValue" size="50">
-  			<input type="submit" value="Invia">
-		</form>	
-	</div>
-
-    <div class="bottoni">
-		<form id="buttons" onsubmit="return buttonBar()" method='get'>
+	<img src="/img/logo.jpg" height="400">
+	<form id="homeSearch" onsubmit="return searchBar()" method='get'>
+  		<input id="qS" type="text" name="questionValue" size="50">
+  		<input type="submit" value="Invia">
+	</form>
+	<form id="buttons" onsubmit="return buttonBar()" method='get'>
 			<input id="1" type="submit" value="LAUREA">
 			<input id="2" type="submit" value="TASSE" >
 			<input id="3" type="submit" value="ERASMUS" >
 			<input id="4" type="submit" value="TIROCINI">
-		</form>
-    </div>
-
-    <div class="container2">
+	</form>
+    <div>
     	<p><a href="#" style="color:white;">Novità 1</a></p>
     	<p><a href="#" style="color:white;">Novità 2</a></p>
     	<p><a href="#" style="color:white;">Novità 3</a></p>
     </div>
-
-    <div style="position: absolute; bottom: 20px; position: center;" id ="Linknotfound">
-    			 	<a href="/segreteria"  style="color:white;"> Non hai trovato quello che cercavi ? </a>
-    </div>
+	<a class="linkNotFound" href="/segreteria"  > Non hai trovato quello che cercavi ? </a>
 </body>

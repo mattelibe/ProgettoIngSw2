@@ -3,27 +3,23 @@
     <head>
         <title>Topic scelto</title>
         <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="/css/centeredStyle.css">
         <script type="text/javascript" src="/script/script.js"></script>
     </head>
     <body>
-        <body bgcolor=#660033>
         <a href="/home">  <img src="/img/logo.jpg">  </a>
         <br>
-        <div class="container-fluid">
-            <h2 style="color:white;">Non abbiamo trovato quello che cercavi</h2>
-            <div class="row">
-            	<div class="container1">
-		            <form onsubmit="return searchBar()" method='get'>
-  			            <input id="qS" type="text" name="questionValue" size="50" placeholder="Prova a cercare ancora">
-  			            <input type="submit" value="Invia">
-		            </form>
-	            </div>
+        <div>
+            <h2>Non abbiamo trovato quello che cercavi</h2>
+            <div>
+		        <form onsubmit="return searchBar()" method='get'>
+  			        <input id="qS" type="text" name="questionValue" size="50" placeholder="Prova a cercare ancora">
+  			        <input type="submit" value="Invia">
+                </form>
             </div>
         </div>
 	    <br>
 	    <br>
-        <div id ="Linknotfound">
-            <a  href="/segreteria" style="color:white;"> Oppure vuoi contattare la segreteria ? </a>
-        </div>
+        <a  class="linkNotFound" href="/segreteria"> Oppure vuoi contattare la segreteria ? </a>
     </body>
 </html>
