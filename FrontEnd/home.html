@@ -1,37 +1,119 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-	<title>Home</title>
-	<link rel="stylesheet" type="text/css" href="/css/centeredStyle.css">
-	<script type="text/javascript" src="/script/script.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>home</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="css/mdb.min.css" rel="stylesheet">
+  <!-- Your custom styles (optional) -->
+  <link href="css/style.min.css" rel="stylesheet">
+  <style type="text/css">
+    @media (min-width: 800px) and (max-width: 850px) {
+            .navbar:not(.top-nav-collapse) {
+                background: #1C2331!important;
+            }
+        }
+  </style>
+  <script type="text/javascript" src="js/script.js"></script>
 </head>
 
-<body onload="buttonBar()">
-	<img src="/img/logo.jpg" height="400">
-	<br>
-	<br>
-	<form id="homeSearch" onsubmit="return searchBar()" method='get'>
-  		<input id="qS" type="text" name="questionValue" size="50">
-  		<input type="submit" value="Invia">
-	</form>
-	<br>
-	<br>
-	<form id="buttons" onsubmit="return buttonBar()" method='get'>
-			<input id="1" type="submit" value="LAUREA">
-			<input id="2" type="submit" value="TASSE" >
-			<input id="3" type="submit" value="ERASMUS" >
-			<input id="4" type="submit" value="TIROCINI">
-	</form>
-	<br>
-	<br>
-    <div>
-    	<p><a href="#" style="color:white;">Novità 1</a></p>
-    	<p><a href="#" style="color:white;">Novità 2</a></p>
-    	<p><a href="#" style="color:white;">Novità 3</a></p>
+<body>
+
+  <!-- Full Page Intro -->
+  <div class="view" style="background-image: url('img/background.png'); background-repeat: no-repeat; background-size: cover;">
+
+    <!-- Mask & flexbox options-->
+    <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+      <!-- Content -->
+      <!--Card-->
+
+      <!-- Card -->
+      <div class="card">
+
+        <!-- Card image -->
+        <img class="card-img-top" src="img/logo.png" alt="Card image cap">
+
+        <!-- Card content -->
+        <div class="card-body">
+
+          <!-- Title -->
+          <h4 class="card-title text-center"><a>Cosa stai cercando ?</a></h4>
+          <!-- Material input -->
+          <!-- Material auto-sizing form -->
+    <form>
+    <!-- Grid row -->
+      <div class="form-row align-items-center">
+        <!-- Grid column -->
+        <div class="col-10">
+            <!-- Material input -->
+          <div class="md-form form-lg">
+            <input type="text" id="inputLGEx" class="form-control form-control-lg">
+            <label for="inputLGEx">Scrivi qui</label>
+          </div>
+        </div>
+        <!-- Grid column -->
+
+
+
+        <!-- Grid column -->
+        <div class="col-auto">
+            <button type="submit" class="btn btn-primary mb-0">Invio</button>
+        </div>
+        <!-- Grid column -->
     </div>
-    <br>
-    <br>
-    <br>
-    <br>
-	<a class="linkNotFound" href="/segreteria"  > Non hai trovato quello che cercavi ? </a>
+    <!-- Grid row -->
+</form>
+<!-- Material auto-sizing form -->
+          <!-- Text -->
+          <!-- Button -->
+
+          <div class="col-auto text-center">
+              <button type="submit" class="btn btn-primary mb-0 mr-2">Laurea</button>
+
+              <button type="submit" class="btn btn-primary mb-0 mr-2">Tasse</button>
+
+              <button type="submit" class="btn btn-primary mb-0 mr-2">Erasum</button>
+
+              <button type="submit" class="btn btn-primary mb-0 mr-2">tirocini</button>
+          </div>
+
+        </div>
+
+      </div>
+      <!-- Card -->
+
+
+
+    </div>
+    <!-- Mask & flexbox options-->
+
+  </div>
+  <!-- Full Page Intro -->
+
+
+
+  <!-- SCRIPTS -->
+  <!-- JQuery -->
+  <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="js/mdb.min.js"></script>
+  <!-- Initializations -->
+  <script type="text/javascript">
+    // Animations initialization
+    new WOW().init();
+  </script>
 </body>
+
+</html>
