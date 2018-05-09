@@ -22,7 +22,6 @@
     "ejs": "^2.5.8",
     "express": "^4.15.5",
     "express-session": "^1.15.6",
-    "express-validator": "^5.1.2",
     "nodemailer": "^4.6.4"
   },
   "devDependencies": {},
