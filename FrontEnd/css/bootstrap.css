@@ -4426,7 +4426,7 @@ tbody.collapse.show {
 }
 
 .card {
-  position: relative;
+  position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

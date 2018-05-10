@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pagina di login</title>
+	<link rel="stylesheet" type="text/css"  href="/css/centeredStyle.css">
+	<script type="text/javascript" src="../index.js"></script>
+	<script>
+        function showPopUp()
+        {
+            if (!checkLogin())
+            {
+                alert(("Username o password non validi"));
+            }
+        }
+	</script>
+	<meta charset="utf-8">
+</head>
+<body>
+ 	<img src="/img/logo.jpg" height="400">
+	<h1 class="loginInsert"> Inserisci i tuoi dati per il login</h1>
+		<form action="/home" method='post'>
+			<br>
+				<input id="user" type="text" name="username" size="50" placeholder="Username">
+			<br>
+			<br>
+				<input id="pswrd" type="password" name="password" size="50" placeholder="Password">
+			<br>
+			<br>
+				<input type="submit" value="Login">
+
+		</form>
+	</div>
+</body>
+</html>

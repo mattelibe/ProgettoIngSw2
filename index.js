@@ -1,8 +1,9 @@
 var express = require('express');
 var bodyParser = require("body-parser");
 var nodemailer = require('nodemailer');
-var vectorUsr = ['se2testingprj1@gmail.com'], vectorPswrd = ['w6tc+5C'];
+var vectorUsr = ['se2testingprj1@gmail.com','aaa'], vectorPswrd = ['w6tc+5C','aaa'];
 var app = express();
+var loggedIn = false;
 //Gestione dati statici (immagini, css)
 app.use(express.static('public'));
 //Gestione pagine da visualizzare e strumento di render
@@ -24,39 +25,52 @@ app.post('/home', function(req, res)
 {
     if( (vectorUsr.indexOf(req.body.username)!= -1) && (vectorPswrd.indexOf(req.body.password) != -1))
     {
+        loggedIn=true;
         console.log(req.body.username + ' submitted Successfully!');
         console.log("POST HOME");
-        res.render('home.html');
+        res.status(200).render('home.html');
+
     }
     else
     {
-        res.render('login.html');
+        res.status(404).send();
     }
-    //checkData.checkLogin(vectorUsr, vectorPswrd,req.body.username,req.body.password );
-    /*if(checkData.checkLogin(vectorUsr, vectorPswrd,req.body.username,req.body.password ))
-    {
-        console.log(req.body.username + ' submitted Successfully!');
-        console.log("POST HOME");
-        res.render('home.html');
-    }
-    var data = req.body.username + " " + req.body.password;
-    console.log(data + ' Submitted Successfully!');
-    console.log("POST HOME");
-    res.render('home.html');*/
 });
+
+function checkLogin()
+{
+    return loggedIn;
+}
 
 //Accesso home mediante GET
 app.get('/home', function(req, res)
 {
-    console.log("GET HOME");
-    res.render('home.html');
+    if(!loggedIn)
+    {
+        res.status(403).send("<h1> Area non autorizzata!</h1>");
+    }
+    else
+    {
+        console.log("GET HOME");
+        res.status(200).render('home.html');
+    }
+
 });
 
 //Accesso alla zona segreteria
 app.get('/segreteria', function(req,res)
 {
-    console.log("GET SEGRETERIA");
-    res.render("segreteria.html");
+    if(!loggedIn)
+    {
+        res.status(403).send("<h1> Area non autorizzata!</h1>");
+    }
+    else
+    {
+        console.log("GET SEGRETERIA");
+        res.status(200).render("segreteria.html");
+    }
+
+
 });
 
 //Invio mail per la segreteria
@@ -97,25 +111,33 @@ app.post('/send', function(req, res)
 //Gestione ricerca
 app.get('/topic/:questionValue', function(req, res)
     {
-        //Pagina html da ricercare in base al valore inserito
-        var topic = req.params.questionValue+".html";
-        //Render pagina
-        res.render(("topic/"+ topic),function (err, html)
+        if(!loggedIn)
+        {
+            res.status(403).send("<h1> Area non autorizzata!</h1>");
+        }
+        else
+        {
+            //Pagina html da ricercare in base al valore inserito
+            var topic = req.params.questionValue+".html";
+            //Render pagina
+            res.render(("topic/"+ topic),function (err, html)
                 {
                     //Se non esiste restituisce una pagina di errore
                     if(err)
                     {
                         console.log("GET PAGINA NON TROVATA");
-                        res.render("pag_non_trovata.html");
+                        res.status(404).render("pag_non_trovata.html");
                     }
                     //Se esiste viene visualizzata
                     else
                     {
                         console.log("GET " + req.params.questionValue.toUpperCase());
-                        res.send(html);
+                        res.status(200).send(html);
                     }
                 }
-         );
+            );
+        }
+
 });
 //Funzione di ascolto
 app.listen(app.get('port'),function()
