@@ -28,13 +28,13 @@
 			<div class="card">
 				<img class="card-img-top" src="/img/logo.png" alt="Card image cap">
 				<div class="card-body">
-					<h4 class="card-title text-center"><a>Cosa stai cercando ?</a></h4>
+					<h4 class="card-title text-center"><a>Benvenuto, cosa stai cercando ?</a></h4>
 					<form class=" mb-4 " id="homeSearch" onsubmit="return searchBar()" method='get'>
 						<div class="form-row align-items-center">
 							<div class="col-10">
 								<div class="md-form form-lg">
 									<input name="questionValue" type="text" id="inputLGEx" class="form-control form-control-lg">
-									<label for="inputLGEx">Scrivi qui</label>
+									<label for="inputLGEx">Scrivi qui l'argomento (es. Laurea, Tasse...)</label>
 								</div>
 							</div>
 							<div class="col-2">
@@ -43,6 +43,7 @@
 						</div>
 					</form>
 					<form id="buttons" onsubmit="return buttonBar()" method='get'>
+						<h5 class="card-title text-center"><a>Benvenuto, cosa stai cercando ?</a></h5>
 						<div class="col-auto text-center">
 							<button id="1" value="Laurea" type="submit" class="btn btn-primary mb-0 mr-2">Laurea</button>
 							<button id="2" value="Tasse" type="submit" class="btn btn-primary mb-0 mr-2">Tasse</button>
@@ -50,6 +51,9 @@
 							<button id="4" value="Tirocini" type="submit" class="btn btn-primary mb-0 mr-2">Tirocini</button>
 						</div>
 					</form>
+					<div class="pull-left">
+						<button id="logout" value="Tirocini" type="submit" class="btn btn-primary mb-0 mr-2">Logout</button>
+					</div>
 				</div>
 			</div>
 		</div>
