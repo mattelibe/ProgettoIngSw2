@@ -99,7 +99,7 @@ app.post('/send', function(req, res)
     // Creazione mail
     var mailOptions = {
         from: '"Domanda segreteria" <se2testingprj@gmail.com>', // mittente
-        to: 'bendadavide@gmail.com', // destinatario
+        to: 'se2prjtestammi@gmail.com', // destinatario
         subject: 'Domanda segreteria', // Oggetto della mail
         text: req.body.mesg // Messaggio presente nel form della pagina della segreteria
     };
