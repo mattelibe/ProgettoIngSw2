@@ -22,6 +22,7 @@ app.set('port', process.env.PORT || 3000);
 // Carico pagina principale
 app.get('/', function( req, res)
 {
+  req.session.success = false;
     console.log("GET LOGIN");
     res.render('login', {success: req.session.success});
 });

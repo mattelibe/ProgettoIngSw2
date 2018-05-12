@@ -1,64 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>home</title>
+  <title>segreteria</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/mdb.min.css" rel="stylesheet">
   <link href="/css/style.min.css" rel="stylesheet">
-  <link href="/css/stylesegreteria.css" rel="stylesheet">
+  <link href="/css/topicsandsecr.css" rel="stylesheet">
   <style type="text/css">
-    @media (min-width: 800px) and (max-width: 850px)
-		{
-    		.navbar:not(.top-nav-collapse)
-				{
-    				background: #1C2331!important;
-        }
+    @media (min-width: 800px) and (max-width: 850px) {
+      .navbar:not(.top-nav-collapse) {
+        background: #1C2331 !important;
+      }
     }
   </style>
   <script type="text/javascript" src="/script/pathManager.js"></script>
 </head>
+
 <body>
   <div class="view" style="background-image: url('/img/background.png'); background-repeat: no-repeat; background-size: cover;">
     <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
       <div class="card">
-        <img class="card-img-top" src="/img/logo.png" alt="Card image cap">
+        <a href="/home">
+          <img class="card-img-top" src="/img/logo.png" alt="Card image cap">
+        </a>
         <div class="card-body">
-          <h4 class="card-title text-center"><a>Non hai trovato quello che stavi cercando ?</a></h4>
-          <h5 class="card-title text-center"><a>Contatta la segreteria tramite mail</a></h5>
-          <br>
-          <br>
-          <form action="send" method="post">
-          	<div class="md-form">
-            	<textarea name="mesg" type="text" id="answer" class="md-textarea md-textarea-auto form-control" rows="6"></textarea>
-            	<label for="answer">Inserisci qui la tua domanda</label>
-          	</div>
-          	<br>
-          	<br>
- 						<div class="col-auto pb-4">
-            	<button type="submit" class="btn btn-primary mb-0">Invio</button>
-        		</div>
-        		<br>
-        		<div class="col-xs-1" align="center">
-          		<h5>Oppure recati in una delle segreterie di UniTn</h5>
-          		<div id="map-container" class="z-depth-1-half map-container mb-5" style="height: 500px"></div>
-          			<script src="https://maps.google.com/maps/api/js"></script>
-          			<ul class="list-group">
-            			<li class="list-group-item">Economia e management - Via Vigilio Inama 5, Trento</li>
-            			<li class="list-group-item">Lettere e filosofia - Via Tommaso Gar 14, Trento</li>
-            			<li class="list-group-item">Ingegneria civile ambientale meccanica - Via Mesiano 77, Trento</li>
-            			<li class="list-group-item">Matematica, fisica, biologia, ingegneria dell'informazione - Via Sommarive 5, Trento</li>
-            			<li class="list-group-item">Psicologia e scienze cognitive e centro mente e cervello - Corso Bettini 84, Rovereto</li>
-          			</ul>
-        		</div>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
+          <h4 class="card-title text-center mb-4">Non hai trovato quello che stavi cercando ?</h4>
+          <h5 class="card-title text-center mb-2">Contatta la segreteria tramite mail</h5>
+          <form action="send"  method="post">
+            <div class="md-form">
+              <textarea name="mesg" type="text" id="answer" class="md-textarea md-textarea-auto form-control" rows="6"></textarea>
+              <label for="answer">Inserisci qui la tua domanda</label>
+            </div>
+            <div class="col-auto pb-4">
+              <button type="submit" onclick="alert('Messaggio inviato con successo! Ritorno alla pagina principale')" class="btn btn-primary mb-0">Invio</button>
+            </div>
+            <div class="col-xs-1" align="center">
+              <h5>Oppure recati in una delle segreterie di UniTn</h5>
+              <div id="map-container" class="z-depth-1-half map-container mb-5" style="height: 500px"></div>
+              <script src="https://maps.google.com/maps/api/js"></script>
+              <ul class="list-group">
+                <li class="list-group-item">Economia e management - Via Vigilio Inama 5, Trento</li>
+                <li class="list-group-item">Lettere e filosofia - Via Tommaso Gar 14, Trento</li>
+                <li class="list-group-item">Ingegneria civile ambientale meccanica - Via Mesiano 77, Trento</li>
+                <li class="list-group-item">Matematica, fisica, biologia, ingegneria dell'informazione - Via Sommarive 5, Trento</li>
+                <li class="list-group-item">Psicologia e scienze cognitive e centro mente e cervello - Corso Bettini 84, Rovereto</li>
+              </ul>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
   <!-- SCRIPTS -->
   <!-- JQuery -->
   <script type="text/javascript" src="/script/UI/jquery-3.2.1.min.js"></script>
@@ -76,54 +73,48 @@
   <!--Google Maps-->
   <script type="text/javascript" scr="https://maps.google.com/maps/api/js"></script>
   <!-- Google Maps settings -->
-	<script>
-  	function regular_map()
-		{
-      	var position = new google.maps.LatLng(46.067, 11.133);
-      	var EconManag= new google.maps.LatLng(46.0660979,11.1175472);   //a posto
-      	var LettFilo= new google.maps.LatLng(46.0677867,11.1170472);   //a posto
-      	var Ing= new google.maps.LatLng(46.065339, 11.138995);          //a posto
-      	var MatFisInf= new google.maps.LatLng(46.066890, 11.150425);  //a posto
-      	var Psic= new google.maps.LatLng(45.8937054,11.0413443);  //a posto
-      	var var_mapoptions =
-				{
-          	center: position,
-          	zoom: 14
-      	};
-      	var var_map = new google.maps.Map(document.getElementById("map-container"),var_mapoptions);
-      	var var_marker1 = new google.maps.Marker(
-				{
-          	position: EconManag,
-          	map: var_map,
-          	title: "Economia e management"
-      	});
-      	var var_marker2 = new google.maps.Marker(
-				{
-          	position: LettFilo,
-          	map: var_map,
-          	title: "Lettere e filosofia"
-      	});
-      	var var_marker3 = new google.maps.Marker(
-				{
-          	position: Ing,
-          	map: var_map,
-          	title: "Ingegneria civile ambientale meccanica"
-      	});
-      	var var_marker4 = new google.maps.Marker(
-				{
-          	position: MatFisInf,
-          	map: var_map,
-          	title: "Matematica, fisica, biologia, informatica"
-      	});
-      	var Psic = new google.maps.Marker(
-				{
-          	position: Psic,
-          	map: var_map,
-          	title: "Psicologia e scienze cognitive e centro mente e cervello"
-      	});
-		}
-		// Inizializza la mappa
-  	google.maps.event.addDomListener(window, 'load', regular_map);
-	</script>
+  <script>
+    function regular_map() {
+      var position = new google.maps.LatLng(46.067, 11.133);
+      var EconManag = new google.maps.LatLng(46.0660979, 11.1175472); //a posto
+      var LettFilo = new google.maps.LatLng(46.0677867, 11.1170472); //a posto
+      var Ing = new google.maps.LatLng(46.065339, 11.138995); //a posto
+      var MatFisInf = new google.maps.LatLng(46.066890, 11.150425); //a posto
+      var Psic = new google.maps.LatLng(45.8937054, 11.0413443); //a posto
+      var var_mapoptions = {
+        center: position,
+        zoom: 14
+      };
+      var var_map = new google.maps.Map(document.getElementById("map-container"), var_mapoptions);
+      var var_marker1 = new google.maps.Marker({
+        position: EconManag,
+        map: var_map,
+        title: "Economia e management"
+      });
+      var var_marker2 = new google.maps.Marker({
+        position: LettFilo,
+        map: var_map,
+        title: "Lettere e filosofia"
+      });
+      var var_marker3 = new google.maps.Marker({
+        position: Ing,
+        map: var_map,
+        title: "Ingegneria civile ambientale meccanica"
+      });
+      var var_marker4 = new google.maps.Marker({
+        position: MatFisInf,
+        map: var_map,
+        title: "Matematica, fisica, biologia, informatica"
+      });
+      var Psic = new google.maps.Marker({
+        position: Psic,
+        map: var_map,
+        title: "Psicologia e scienze cognitive e centro mente e cervello"
+      });
+    }
+    // Inizializza la mappa
+    google.maps.event.addDomListener(window, 'load', regular_map);
+  </script>
 </body>
+
 </html>
