@@ -24,6 +24,13 @@ app.get('/', function( req, res)
     res.render('login', {success: req.session.success});
 });
 
+app.get('/login', function (req, res)
+{
+   req.session.success = false;
+   console.log("LOG OUT");
+   res.render('login',{success: req.session.success});
+});
+
 //Accesso home mediante POST
 app.post('/home', function(req, res)
 {
