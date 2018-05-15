@@ -3,18 +3,27 @@ function searchBar()
 {
     //Variabile che gestisce il path
     var response;
+    var text;
+    if(document.getElementById('inputLGEx').value== "")
+    {
+      text ="empty";
+    }
+    else
+    {
+        text = document.getElementById('inputLGEx').value.toLowerCase()
+    }
     //Verifico che la pagina da cui effettuo la ricerca sia la home
     if(document.body.contains(document.getElementById('homeSearch')))
     {
+
         //Cerco il file accedendo alla cartella topic
-        response ='topic/'+document.getElementById('inputLGEx').value.toLowerCase();
+        response ='topic/'+text;
     }
     else
     {
         //Cerco il file senza accesso (ricerca effettuata da pag_non_trovata)
-        response = document.getElementById('inputLGEx').value.toLowerCase();
+        response = text;
     }
-
     //Reindirizzamento alla pagina corrispondente (pagine inesistenti gestite dal server)
     location = response;
     return false;
