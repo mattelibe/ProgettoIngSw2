@@ -1,0 +1,516 @@
+swagger: "2.0"
+info:
+  description: "Queste API servono a gestire il nostro servizio"
+  version: "1.0.0"
+  title: "API"
+host: "heroku"
+basePath:  "https://intense-chamber-67327.herokuapp.com/"
+tags:
+- name: "User"
+  description: "Tutto su gli utenti del servizio"
+- name: "Segreteria"
+  description: "Tutto sulla segreteria dell'università"
+
+schemes:
+- "http"
+paths:
+
+
+
+ /{UserId}/Home:             //ricerca dalla home
+    get:
+      parameters:
+        - in: path
+          name: "searched"
+          required: true
+          schema:
+            type: char
+            minimum: 1
+          description: "L'oggetto cercato"
+      tags:
+      - "User"
+      summary: "Effettua la ricerca"
+      operationId: "ricerca"
+      produces:
+      - "application/xml"
+      - "application/json"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "https://intense-chamber-67327.herokuapp.com/topic/searched"
+        404:
+          description: "Page not found"
+      security:
+      - api_key: []
+
+      
+/{UserId}/Home/Topic/searched:     //ricerca dopo errore
+  get:
+   parameters:
+        - in: path
+          name: "searched"
+          required: true
+          schema:
+            type: char
+            minimum: 1
+          description: "L'oggetto cercato"
+      tags:
+      - "User"
+      summary: "Rieffettua la ricerca dopo un errore"
+      operationId: "ricerca2"
+      produces:
+      - "application/xml"
+      - "application/json"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "https://intense-chamber-67327.herokuapp.com/topic/seached"
+        404:
+          description: "Page not found"
+      security:
+      - api_key: []
+
+//ricerche da home
+      
+      
+  /{UserId}/Home:               //argomento 1
+    get:
+      tags:
+      - "User"
+      summary: "Va alla pagina delle lauree"
+      operationId: "lauree"
+      produces:
+      - "application/xml"
+      - "application/json"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "https://intense-chamber-67327.herokuapp.com/topic/laurea"
+        404:
+          description: "Page not found"
+      security:
+      - api_key: []
+
+
+
+  /{UserId}/Home:   //argomento 2
+    get:
+      tags:
+      - "User"
+      summary: "Va alla pagina dei tirocini"
+      operationId: "tirocini"
+      produces:
+      - "application/xml"
+      - "application/json"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "https://intense-chamber-67327.herokuapp.com/topic/tirocini"
+        404:
+          description: "Page not found"
+      security:
+      - api_key: []
+
+
+
+      
+  /{UserId}/Home:          //argomento 3
+    get:
+      tags:
+      - "User"
+      summary: "Va alla pagina delle tasse"
+      operationId: "tasse"
+      produces:
+      - "application/xml"
+      - "application/json"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "https://intense-chamber-67327.herokuapp.com/topic/tasse"
+        404:
+          description: "Page not found"
+      security:
+      - api_key: []
+      
+
+
+
+  /{UserId}/Home:                    //argomento 4 
+    get:
+      tags:
+      - "User"
+      summary: "Va alla pagina dell'erasmus"
+      operationId: "GetIsee"
+      produces:
+      - "application/xml"
+      - "application/json"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "https://intense-chamber-67327.herokuapp.com/topic/erasmus"
+        404:
+          description: "Page not found"
+      security:
+      - api_key: []
+      
+
+
+
+  /Pagina Iniziale:   //pagina iniziale
+    get:
+      tags:
+      - "User"
+      summary: "Manda alla pagina di login"
+      operationId: "getLogin"
+      produces:
+      - "application/xml"
+      - "application/json"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: " https://intense-chamber-67327.herokuapp.com/"
+        404:
+          description: "Page not found"
+      security:
+      - api_key: []
+
+
+      
+    /Pagina Iniziale:   //login
+    get:
+      tags:
+      - "User"
+      summary: "Logs user into the system"
+      description: ""
+      operationId: "loginform"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - name: "username"
+        in: "query"
+        description: "The user name for login"
+        required: true
+        type: "string"
+      - name: "password"
+        in: "query"
+        description: "The password for login in clear text"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "https://intense-chamber-67327.herokuapp.com/home"
+        403:
+          description: "Invalid username/password supplied"
+      security:
+      - api_key: []
+
+
+   //DA QUI IN POI E' LA PARTE DELLA SEGRETERIA
+
+
+ /{SegreteriaId}/Home:             //ricerca dalla home
+    get:
+      parameters:
+        - in: path
+          name: "searched"
+          required: true
+          schema:
+            type: char
+            minimum: 1
+          description: "L'oggetto cercato"
+      tags:
+      - "Segreteria"
+      summary: "Effettua la ricerca"
+      operationId: "ricerca"
+      produces:
+      - "application/xml"
+      - "application/json"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "https://intense-chamber-67327.herokuapp.com/topic/searched"
+        404:
+          description: "Page not found"
+      security:
+      - api_key: []
+
+      
+  /{SegreteriaId}/Home/Topic/searched:     //ricerca dopo errore
+  get:
+   parameters:
+        - in: path
+          name: "searched"
+          required: true
+          schema:
+            type: char
+            minimum: 1
+          description: "L'oggetto cercato"
+      tags:
+      - "Segreteria"
+      summary: "Rieffettua la ricerca dopo un errore"
+      operationId: "ricerca2"
+      produces:
+      - "application/xml"
+      - "application/json"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "https://intense-chamber-67327.herokuapp.com/topic/seached"
+        404:
+          description: "Page not found"
+      security:
+      - api_key: []
+
+//ricerche da home
+      
+      
+  /{SegreteriaId}/Home:               //argomento 1
+    get:
+      tags:
+      - "Segreteria"
+      summary: "Va alla pagina delle lauree"
+      operationId: "lauree"
+      produces:
+      - "application/xml"
+      - "application/json"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "https://intense-chamber-67327.herokuapp.com/topic/laurea"
+        404:
+          description: "Page not found"
+      security:
+      - api_key: []
+
+
+
+  /{SegreteriaId}/Home:   //argomento 2
+    get:
+      tags:
+      - "Segreteria"
+      summary: "Va alla pagina dei tirocini"
+      operationId: "tirocini"
+      produces:
+      - "application/xml"
+      - "application/json"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "https://intense-chamber-67327.herokuapp.com/topic/tirocini"
+        404:
+          description: "Page not found"
+      security:
+      - api_key: []
+
+
+
+      
+  /{SegreteriaId}/Home:          //argomento 3
+    get:
+      tags:
+      - "Segreteria"
+      summary: "Va alla pagina delle tasse"
+      operationId: "tasse"
+      produces:
+      - "application/xml"
+      - "application/json"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "https://intense-chamber-67327.herokuapp.com/topic/tasse"
+        404:
+          description: "Page not found"
+      security:
+      - api_key: []
+      
+
+
+
+  /{SegreteriaId}/Home:                    //argomento 4 
+    get:
+      tags:
+      - "Segreteria"
+      summary: "Va alla pagina dell'erasmus"
+      operationId: "GetIsee"
+      produces:
+      - "application/xml"
+      - "application/json"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "https://intense-chamber-67327.herokuapp.com/topic/erasmus"
+        404:
+          description: "Page not found"
+      security:
+      - api_key: []
+      
+
+
+
+  /Pagina Iniziale:   //pagina iniziale
+    get:
+      tags:
+      - "Segreteria"
+      summary: "Manda alla pagina di login"
+      operationId: "getLogin"
+      produces:
+      - "application/xml"
+      - "application/json"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: " https://intense-chamber-67327.herokuapp.com/"
+        404:
+          description: "Page not found"
+      security:
+      - api_key: []
+
+
+      
+    /Pagina Iniziale:   //login
+    get:
+      tags:
+      - "Segreteria"
+      summary: "Logs user into the system"
+      description: ""
+      operationId: "loginform"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - name: "username"
+        in: "query"
+        description: "The user name for login"
+        required: true
+        type: "string"
+      - name: "password"
+        in: "query"
+        description: "The password for login in clear text"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "https://intense-chamber-67327.herokuapp.com/home"
+        403:
+          description: "Invalid username/password supplied"
+      security:
+      - api_key: []
+
+
+ //FINO A QUI ERANO TUTTE LE COSE CHE POTEVA FARE USER FATTE DA SEGRETERIA
+      
+
+
+  {SegreteriaId}/Home/Topic/searched:
+    get:
+      tags:
+      - "Segreteria"
+      summary: "Manda alla pagina di inserimento della domanda"
+      operationId: "getPaginaDellaDomanda"
+      produces:
+      - "application/xml"
+      - "application/json"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "/heroku/paginadelladomanda"
+        404:
+          description: "Page not found"
+      security:
+      - api_key: []
+    
+    
+    
+ {SegreteriaId}/PaginaDiInserimento:
+    post:
+      tags:
+      - "Segreteria"
+      summary: "Manda una domanda"
+      operationId: "uploadQuestion"
+      consumes:
+      - "multipart/form-data"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "Topic"
+        in: "path"
+        description: "Topic of the question"
+        type: "integer"
+        format: "int64"
+      - name: "Question"
+        in: "formData"
+        description: "The question"
+        type: "string"
+      - name: "Answer"
+        in: "formData"
+        description: "The answer"
+        type: "string"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/heroku/paginadirisposta"
+      security:
+      - Segreteria_auth:
+        - "write:Answer"
+        - "read:Question"
+
+
+
+
+
+    in: "header"
+  User:
+    type: "object"
+    properties:
+    xml:
+      name: "User"
+      
+      
+  Segreteria:
+    type: "object"
+    properties:
+      username:
+        type: "string"
+      password:
+        type: "string"
+    xml:
+      name: "User"
+  
+  Tag:
+    type: "object"
+      name:
+        type: "string"
+    xml:
+      name: "Tag"
+ 
+  ApiResponse:
+    type: "object"
+    properties:
+      code:
+        type: "integer"
+        format: "int32"
+      type:
+        type: "string"
+      message:
+        type: "string"
