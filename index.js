@@ -16,12 +16,29 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(expressSes({secret: 'gS3NyHfq70', saveUninitialized: false, resave: false}));
 //Settaggio porta per gestione sia locale che su heroku
 app.set('port', process.env.PORT || 3000);
+var u,p;
 // Carico pagina principale
+function checkCredentials(u, p)
+{
+  var check = false;
+  if((vectorUsr.indexOf(u)!= -1) && (vectorPswrd.indexOf(p) != -1))
+  {
+    check = true;
+  }
+  return check;
+}
 app.get('/', function( req, res)
 {
     req.session.success = false;
     console.log("GET LOGIN");
     res.render('login', {success: req.session.success});
+});
+
+app.get('/login', function (req, res)
+{
+   req.session.success = false;
+   console.log("LOG OUT");
+   res.render('login',{success: req.session.success});
 });
 
 //Accesso home mediante POST
@@ -30,6 +47,8 @@ app.post('/home', function(req, res)
     //Controllo validità dei dati
     if( (vectorUsr.indexOf(req.body.username)!= -1) && (vectorPswrd.indexOf(req.body.password) != -1))
     {
+        u = req.body.username;
+        p = req.body.password;
         //Attivazione della sessione e caricamento pagina home
         req.session.success=true;
         console.log(req.body.username + " submitted Successfully!");
@@ -65,7 +84,7 @@ app.get('/home', function(req, res)
 app.get('/segreteria', function(req,res)
 {
     //Verifico che l'utente abbia effettuato l'accesso
-    if(req.session.success)
+    if(checkCredentials(u,p))
     {
         //Caricamento della pagina in caso affermativo
         console.log("GET SEGRETERIA");
