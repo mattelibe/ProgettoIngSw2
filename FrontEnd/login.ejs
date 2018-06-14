@@ -38,7 +38,7 @@
         <div class="card-body">
           <!-- Titolo -->
           <h4 class="card-title text-center"><a>Benvenuto nel servizio FAQ UniTn! Inserisci le tue credenziali</a></h4>
-          <form action="/home" method='post'>
+          <form enctype="application/json" action="/home" method='post'>
             <div class="form-group row">
               <label for="inputEmail3MD" class="col-sm-2 col-form-label">Email</label>
               <div class="col-sm-10">
@@ -66,17 +66,6 @@
     </div>
   </div>
   <!-- SCRIPTS -->
-  <%
-	if(success)
-	{
-	    %>
-
-    <script>
-      alert("Accesso effettuato con successo!")
-    </script>
-    <%
-	}
-	%>
   <script type="text/javascript" src="/script/UI/jquery-3.2.1.min.js"></script>
   <!-- Bootstrap tooltips -->
   <script type="text/javascript" src="/script/UI/popper.min.js"></script>
