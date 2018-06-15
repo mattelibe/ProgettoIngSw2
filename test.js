@@ -13,7 +13,7 @@ describe(' Accesso alla pagina di login', () =>
   })
 });
 
-describe(' Accesso alla home valido', () =>
+describe(' Login valido', () =>
 { test(' Dovrebbe rispondere con una POST', (done) =>
   {
       return request(router).post('/home').send(
@@ -26,7 +26,7 @@ describe(' Accesso alla home valido', () =>
   })
 });
 
-describe(' Accesso alla home non valido ', () =>
+describe(' Login non valido ', () =>
 { test(' Dovrebbe rispondere con una POST', (done) =>
   {
       return request(router).post('/home').send(
@@ -39,10 +39,10 @@ describe(' Accesso alla home non valido ', () =>
   })
 });
 
-describe (' Accesso alla pagina della segreteria', () =>
+describe (' Accesso alla home', () =>
 { test(' Dovrebbe rispondere con una GET', (done) =>
   {
-      return request(router).get('/segreteria').then((res) =>
+      return request(router).get('/home').then((res) =>
       {
         expect(res.statusCode).toBe(200);
         done();
@@ -98,6 +98,29 @@ describe (' Accesso a pagina non trovata', () =>
       return request(router).get('/topic/invalidstring').then((res) =>
       {
         expect(res.statusCode).toBe(404);
+        done();
+      })
+  })
+});
+
+describe (' Accesso alla pagina della segreteria', () =>
+{ test(' Dovrebbe rispondere con una GET', (done) =>
+  {
+      return request(router).get('/segreteria').then((res) =>
+      {
+        expect(res.statusCode).toBe(200);
+        done();
+      })
+  })
+});
+
+describe (' Invio mail', () =>
+{ test(' Dovrebbe rispondere con una POST', (done) =>
+  {
+      return request(router).post('/send').send(
+        {mesg: 'message'}).then((res) =>
+      {
+        expect(res.statusCode).toBe(500);
         done();
       })
   })

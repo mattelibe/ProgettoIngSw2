@@ -163,7 +163,8 @@ var appRouter = function(app)
               return console.log(error);
           }
       });
-      res.redirect('home'); //Ritorno alla home dopo l'invio del messaggio
+      console.log("MESSAGGIO INVIATO");
+      res.statusCode(200).redirect('home'); //Ritorno alla home dopo l'invio del messaggio
   });
 }
 module.exports = appRouter;
