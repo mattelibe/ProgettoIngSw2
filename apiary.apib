@@ -1,80 +1,196 @@
 FORMAT: 1A
-HOST: http://polls.apiblueprint.org/
+HOST: https://evening-stream-95878.herokuapp.com/
 
-# matteoliberato
+# Hotai04  e mattelibe
 
-Polls is a simple API allowing consumers to view polls and vote in them.
+Il servizio FAQ UniTn è un API che permette ad uno studente della facoltà di Trento di visualizzare e richiedere informazioni su diversi topic tramite email alla segreteria UniTn
 
-## Questions Collection [/questions]
+## Pagina di login [/]
 
-### List All Questions [GET]
+### Effettua accesso [POST]
 
-+ Response 200 (application/json)
+Dalla pagina principale è possibile effettuare l'accesso al servizio
 
-        [
-            {
-                "question": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
-                    {
-                        "choice": "Swift",
-                        "votes": 2048
-                    }, {
-                        "choice": "Python",
-                        "votes": 1024
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 512
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 256
-                    }
-                ]
-            }
-        ]
++ Request (/home)
 
-### Create a New Question [POST]
-
-You may create your own question using this action. It takes a JSON
-object containing a question and a collection of answers in the
-form of choices.
-
-+ Request (application/json)
++ Response 200 (/home)
 
         {
-            "question": "Favourite programming language?",
-            "choices": [
-                "Swift",
-                "Python",
-                "Objective-C",
-                "Ruby"
-            ]
+            Pagina home
         }
 
-+ Response 201 (application/json)
++ Response 403 (/)
+
+        {
+            Ritorno alla pagina di login
+        }
+
+## Home page [/home]
+
+### Cerca un topic  [GET]
+
+E' possibile effettuare una ricerca dei topic tramite la barra di ricerca oppure utilizzando i bottoni sottostanti
++ Request (/topic/:questionValue)
+
++ Response 200 (/topic/questionValue)
 
     + Headers
 
-            Location: /questions/2
+            Location: /topic/questionValue
 
     + Body
 
             {
-                "question": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
-                    {
-                        "choice": "Swift",
-                        "votes": 0
-                    }, {
-                        "choice": "Python",
-                        "votes": 0
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 0
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 0
-                    }
-                ]
+                Pagina del topic cercato
+            }
++ Response 404 (/topic/questionValue)
+
+    + Headers
+
+            Location: /topic/questionValue
+
+    + Body
+
+            {
+                Pagina di errore da dove poter effettuare nuovamente la ricerca o accedere alla pagina per fare domanda alla segreteria
+            }
+
+### Effettua logout [GET]
+
+Effettua logout 
+
++ Request (/)
+
++ Response 200 (/)
+
+    + Headers
+
+            Location: /
+
+    + Body
+
+            {
+                Pagina di login
+            }
+
+### Accedi alla pagina della segreteria  [GET]
+Permette di accedere direttamente alla pagina della segreteria
++ Request (/segreteria)
+
++ Response 200 (/segreteria)
+
+    + Headers
+
+            Location: /segreteria
+
+    + Body
+
+            {
+                Pagina della segreteria
+            }
+
+
+## Pagina topic [/topic/questionValue]
+
+### Ritorno alla home [GET]
+
+Tramite la pressione del logo presente nella pagina è possibile ritornare alla pagina home
+
++ Request (/home)
+
++ Response 200 (/home)
+
+    + Headers
+
+            Location: /home
+
+    + Body
+
+            {
+                Pagina di login
+            }
+
+## Pagina non trovata [/pag_non_trovata]
+
+### Cerca un topic  [GET]
+
+Da questa pagina è possibile rieffettuare la ricerca nel caso in cui il topic non era presente
++ Request (/topic/:questionValue)
+
++ Response 200 (/topic/questionValue)
+
+    + Headers
+
+            Location: /topic/questionValue
+
+    + Body
+
+            {
+                Pagina del topic cercato
+            }
++ Response 404 (/topic/questionValue)
+
+    + Headers
+
+            Location: /topic/questionValue
+
+    + Body
+
+            {
+                Pagina di errore da dove poter effettuare nuovamente la ricerca o accedere alla pagina per fare domanda alla segreteria
+            }
+
+### Ritorno alla home [GET]
+
+Tramite la pressione del logo presente nella pagina è possibile ritornare alla pagina home
+
++ Request (/home)
+
++ Response 200 (/home)
+
+    + Headers
+
+            Location: /home
+
+    + Body
+
+            {
+                Pagina di login
+            }
+
+## Segreteria [/segreteria]
+
+### Invio mail [POST]
+
+Dalla pagina della segreteria è possibile mandare un messaggio alla segreteria con la propria mail di accesso
+
++ Request (/send)
+
++ Response 200 (/home)
+
+    + Headers
+
+            Location: /home
+
+    + Body
+
+            {
+               Messaggio di conferma dell'invio della mail e ritorno alla home
+            }
+### Ritorno alla home [GET]
+
+Tramite la pressione del logo presente nella pagina è possibile ritornare alla pagina home
+
++ Request (/home)
+
++ Response 200 (/home)
+
+    + Headers
+
+            Location: /home
+
+    + Body
+
+            {
+                Pagina di login
             }
