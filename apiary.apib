@@ -1,0 +1,196 @@
+FORMAT: 1A
+HOST: https://evening-stream-95878.herokuapp.com/
+
+# Hotai04  e mattelibe
+
+Il servizio FAQ UniTn è un API che permette ad uno studente della facoltà di Trento di visualizzare e richiedere informazioni su diversi topic tramite email alla segreteria UniTn
+
+## Pagina di login [/]
+
+### Effettua accesso [POST]
+
+Dalla pagina principale è possibile effettuare l'accesso al servizio
+
++ Request (/home)
+
++ Response 200 (/home)
+
+        {
+            Pagina home
+        }
+
++ Response 403 (/)
+
+        {
+            Ritorno alla pagina di login
+        }
+
+## Home page [/home]
+
+### Cerca un topic  [GET]
+
+E' possibile effettuare una ricerca dei topic tramite la barra di ricerca oppure utilizzando i bottoni sottostanti
++ Request (/topic/:questionValue)
+
++ Response 200 (/topic/questionValue)
+
+    + Headers
+
+            Location: /topic/questionValue
+
+    + Body
+
+            {
+                Pagina del topic cercato
+            }
++ Response 404 (/topic/questionValue)
+
+    + Headers
+
+            Location: /topic/questionValue
+
+    + Body
+
+            {
+                Pagina di errore da dove poter effettuare nuovamente la ricerca o accedere alla pagina per fare domanda alla segreteria
+            }
+
+### Effettua logout [GET]
+
+Effettua logout 
+
++ Request (/)
+
++ Response 200 (/)
+
+    + Headers
+
+            Location: /
+
+    + Body
+
+            {
+                Pagina di login
+            }
+
+### Accedi alla pagina della segreteria  [GET]
+Permette di accedere direttamente alla pagina della segreteria
++ Request (/segreteria)
+
++ Response 200 (/segreteria)
+
+    + Headers
+
+            Location: /segreteria
+
+    + Body
+
+            {
+                Pagina della segreteria
+            }
+
+
+## Pagina topic [/topic/questionValue]
+
+### Ritorno alla home [GET]
+
+Tramite la pressione del logo presente nella pagina è possibile ritornare alla pagina home
+
++ Request (/home)
+
++ Response 200 (/home)
+
+    + Headers
+
+            Location: /home
+
+    + Body
+
+            {
+                Pagina di login
+            }
+
+## Pagina non trovata [/pag_non_trovata]
+
+### Cerca un topic  [GET]
+
+Da questa pagina è possibile rieffettuare la ricerca nel caso in cui il topic non era presente
++ Request (/topic/:questionValue)
+
++ Response 200 (/topic/questionValue)
+
+    + Headers
+
+            Location: /topic/questionValue
+
+    + Body
+
+            {
+                Pagina del topic cercato
+            }
++ Response 404 (/topic/questionValue)
+
+    + Headers
+
+            Location: /topic/questionValue
+
+    + Body
+
+            {
+                Pagina di errore da dove poter effettuare nuovamente la ricerca o accedere alla pagina per fare domanda alla segreteria
+            }
+
+### Ritorno alla home [GET]
+
+Tramite la pressione del logo presente nella pagina è possibile ritornare alla pagina home
+
++ Request (/home)
+
++ Response 200 (/home)
+
+    + Headers
+
+            Location: /home
+
+    + Body
+
+            {
+                Pagina di login
+            }
+
+## Segreteria [/segreteria]
+
+### Invio mail [POST]
+
+Dalla pagina della segreteria è possibile mandare un messaggio alla segreteria con la propria mail di accesso
+
++ Request (/send)
+
++ Response 200 (/home)
+
+    + Headers
+
+            Location: /home
+
+    + Body
+
+            {
+               Messaggio di conferma dell'invio della mail e ritorno alla home
+            }
+### Ritorno alla home [GET]
+
+Tramite la pressione del logo presente nella pagina è possibile ritornare alla pagina home
+
++ Request (/home)
+
++ Response 200 (/home)
+
+    + Headers
+
+            Location: /home
+
+    + Body
+
+            {
+                Pagina di login
+            }
