@@ -1,8 +1,8 @@
 var express = require('express');
 var jwt = require('jsonwebtoken');
 var nodemailer = require('nodemailer');
-var vectorUsr = ['se2testingprj1@gmail.com'];
-var vectorPswrd = ['w6tc+5C'];
+//var vectorUsr = ['se2testingprj1@gmail.com'];
+//var vectorPswrd = ['w6tc+5C'];
 var token = null;
 var secret = 'xivysga13';
 
@@ -57,11 +57,9 @@ var appRouter = function(app)
        var user = req.body.username;
        var pswrd = req.body.password;
        // Verifica delle credenziali per l'accesso
-       if ((vectorUsr.indexOf(user) != -1) &&
-          (vectorPswrd.indexOf(pswrd) != -1))
+       if ((user != '') && (pswrd != ''))
        {
-           // Creazione del token e caricamento pagina home in caso
-           // affermativo
+           // Creazione del token e caricamento pagina home in caso affermativo
            token = jwt.sign(user, secret);
            console.log("POST HOME");
            res.status(200);
