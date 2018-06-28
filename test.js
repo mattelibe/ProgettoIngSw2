@@ -17,23 +17,10 @@ describe(' Login valido', () =>
 { test(' Dovrebbe rispondere con una POST HOME', (done) =>
   {
       return request(router).post('/home').send(
-        {username : 'se2testingprj1@gmail.com', password: 'w6tc+5C'})
+        {username : 'user@name.com', password: 'pswrd'})
         .then((res) =>
         {
             expect(res.statusCode).toBe(200);
-            done();
-        })
-  })
-});
-
-describe(' Login non valido ', () =>
-{ test(' Dovrebbe rispondere con DATI NON VALIDI', (done) =>
-  {
-      return request(router).post('/home').send(
-        {username : 'invaliduser', password: 'invalidpassword'})
-        .then((res) =>
-        {
-            expect(res.statusCode).toBe(302);
             done();
         })
   })

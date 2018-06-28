@@ -60,7 +60,7 @@ var appRouter = function(app)
        if ((user != '') && (pswrd != ''))
        {
            // Creazione del token e caricamento pagina home in caso affermativo
-           token = jwt.sign(user, secret);
+           token = jwt.sign({ user: 'user'}, secret, {expiresIn: '1h'});
            console.log("POST HOME");
            res.status(200);
            res.render('home');
