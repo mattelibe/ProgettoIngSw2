@@ -20,10 +20,11 @@ var appRouter = function(app)
          //Controlla che sia valido
          jwt.verify(token, secret, function(err, decoded)
          {
-           //In caso negativo, rimanda alla pagina di login
+           //In caso negativo, rimanda alla pagina di sessione scaduta
            if (err)
            {
-             return res.redirect('/');
+             console.log("GET SESSIONE SCADUTA");
+             return res.status(440).render('sessione_scaduta');
            }
            else
            {
@@ -60,7 +61,7 @@ var appRouter = function(app)
        if ((user != '') && (pswrd != ''))
        {
            // Creazione del token e caricamento pagina home in caso affermativo
-           token = jwt.sign({ user: 'user'}, secret, {expiresIn: '1h'});
+           token = jwt.sign({ user: 'user'}, secret, {expiresIn: '10s'});
            console.log("POST HOME");
            res.status(200);
            res.render('home');

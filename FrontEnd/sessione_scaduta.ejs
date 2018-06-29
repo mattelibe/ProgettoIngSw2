@@ -24,20 +24,14 @@
 	<div class="view" style="background-image: url('/img/background.png'); background-repeat: no-repeat; background-size: cover;">
 		<div class="mask rgba-black-light d-flex justify-content-center align-items-center">
 			<div class="card">
-				<a href="/home">
 					<img class="card-img-top" src="/img/logo.png" alt="Card image cap">
-				</a>
 				<div class="card-body">
-					<h4 class="card-title text-center"><a>La sessione è scaduta</a></h4>
-					<form enctype="application/json" id="notFoundSearch" onsubmit="return searchBar()" method='get'>
-						<div class="form-row align-items-center">
-							<div class="col-10">
-								<div class="md-form form-lg">
-									<label for="inputLGEx"> Ci dispiace per il contrattempo, ma per questioni di sicurezza dobbiamo chiederti di ri-effettuare l'accesso, per questo stai per essere reindirizzato alla home.</label>
-								</div>
-							</div>
-						</div>
-					</form>
+					<h4 class="card-title text-center"><a>Sessione scaduta</a></h4>
+					<div class="card-body">
+					 <h5 class="card-title text-center mb-2">Ci dispiace per il contrattempo, ma per questioni di sicurezza dobbiamo chiederti di ri-effettuare l'accesso</h5>
+				</div>
+				<div class="pull-left mt-4">
+					<a href="/" role="button" class="btn btn-primary mb-0 mr-2">Ritorna alla pagina di login</a>
 				</div>
 			</div>
 		</div>
