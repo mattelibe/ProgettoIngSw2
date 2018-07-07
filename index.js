@@ -14,7 +14,7 @@ app.use(bodyParser.json());
 //Avvio router
 router(app);
 //Settaggio porta per gestione sia locale che su heroku
-app.set('port', process.env.PORT || 4000);
+app.set('port', process.env.PORT || 3000);
 //Funzione di ascolto
 app.listen(app.get('port'),function()
 {
