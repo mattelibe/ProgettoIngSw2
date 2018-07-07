@@ -54,6 +54,11 @@ E' possibile effettuare una ricerca dei topic tramite la barra di ricerca oppure
             {
                 Pagina di errore da dove poter effettuare nuovamente la ricerca o accedere alla pagina per fare domanda alla segreteria
             }
++ Response 440 (/sessione_scaduta)
+
+        {
+            Pagina con messaggio di errore per sessione scaduta dalla quale è possibile tornare alla pagina di login
+        }
 
 ### Effettua logout [GET]
 
@@ -88,7 +93,11 @@ Permette di accedere direttamente alla pagina della segreteria
             {
                 Pagina della segreteria
             }
++ Response 440 (/sessione_scaduta)
 
+        {
+            Pagina con messaggio di errore per sessione scaduta dalla quale è possibile tornare alla pagina di login
+        }
 
 ## Pagina topic [/topic/questionValue]
 
@@ -109,7 +118,11 @@ Tramite la pressione del logo presente nella pagina è possibile ritornare alla 
             {
                 Pagina di login
             }
++ Response 440 (/sessione_scaduta)
 
+        {
+            Pagina con messaggio di errore per sessione scaduta dalla quale è possibile tornare alla pagina di login
+        }
 ## Pagina non trovata [/pag_non_trovata]
 
 ### Cerca un topic  [GET]
@@ -139,7 +152,11 @@ Da questa pagina è possibile rieffettuare la ricerca nel caso in cui il topic n
             {
                 Pagina di errore da dove poter effettuare nuovamente la ricerca o accedere alla pagina per fare domanda alla segreteria
             }
++ Response 440 (/sessione_scaduta)
 
+        {
+            Pagina con messaggio di errore per sessione scaduta dalla quale è possibile tornare alla pagina di login
+        }
 ### Ritorno alla home [GET]
 
 Tramite la pressione del logo presente nella pagina è possibile ritornare alla pagina home
@@ -157,7 +174,11 @@ Tramite la pressione del logo presente nella pagina è possibile ritornare alla 
             {
                 Pagina di login
             }
++ Response 440 (/sessione_scaduta)
 
+        {
+            Pagina con messaggio di errore per sessione scaduta dalla quale è possibile tornare alla pagina di login
+        }
 ## Segreteria [/segreteria]
 
 ### Invio mail [POST]
@@ -177,6 +198,11 @@ Dalla pagina della segreteria è possibile mandare un messaggio alla segreteria 
             {
                Messaggio di conferma dell'invio della mail e ritorno alla home
             }
++ Response 440 (/sessione_scaduta)
+
+        {
+            Pagina con messaggio di errore per sessione scaduta dalla quale è possibile tornare alla pagina di login
+        }
 ### Ritorno alla home [GET]
 
 Tramite la pressione del logo presente nella pagina è possibile ritornare alla pagina home
@@ -194,3 +220,8 @@ Tramite la pressione del logo presente nella pagina è possibile ritornare alla 
             {
                 Pagina di login
             }
++ Response 440 (/sessione_scaduta)
+
+        {
+            Pagina con messaggio di errore per sessione scaduta dalla quale è possibile tornare alla pagina di login
+        }
