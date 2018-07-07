@@ -107,7 +107,7 @@ describe (' Invio mail', () =>
       return request(router).post('/send').send(
         {mesg: 'message'}).then((res) =>
       {
-        expect(res.statusCode).toBe(500);
+        expect(res.statusCode).toBe(302);
         done();
       })
   })

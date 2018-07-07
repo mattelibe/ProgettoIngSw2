@@ -38,7 +38,7 @@ function buttonBar()
     var listener = function (e)
     {
         //Reindirizzamento alla pagina in base al testo del bottone (pagine inesistenti gestite dal server)
-        location = 'topic/'+e.target.value.toLowerCase();
+        location = 'topic/'+ e.target.value.toLowerCase();
     };
     //Aggiunta ascoltatore
     form.addEventListener('click', listener, false);

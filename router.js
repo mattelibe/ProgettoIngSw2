@@ -1,8 +1,7 @@
+var fs = require('fs');
 var express = require('express');
 var jwt = require('jsonwebtoken');
 var nodemailer = require('nodemailer');
-//var vectorUsr = ['se2testingprj1@gmail.com'];
-//var vectorPswrd = ['w6tc+5C'];
 var token = null;
 var secret = 'xivysga13';
 
@@ -61,7 +60,7 @@ var appRouter = function(app)
        if ((user != '') && (pswrd != ''))
        {
            // Creazione del token e caricamento pagina home in caso affermativo
-           token = jwt.sign({ user: 'user'}, secret, {expiresIn: '10s'});
+           token = jwt.sign({ user: 'user'}, secret, {expiresIn: '1h'});
            console.log("POST HOME");
            res.status(200);
            res.render('home');
@@ -86,31 +85,35 @@ var appRouter = function(app)
   app.use('/topic/', apiRoutes);
   app.get('/topic/:questionValue', function(req, res)
   {
-      // Valore che verifica la validità della stringa inserita nella barra
-      // di ricerca
-      var error = false;
-      // Verifico che l'utente abbia effettuato l'accesso analizzando il token
-          // Pagina da ricercare in base al valore inserito
-          var topic = req.params.questionValue.toLowerCase();
-          //Render che verifica la validità del valore inserito
-          res.render(('topic/' + topic), function(err)
-          {
-              // Se non esiste restituisce la pagina di errore
-              if (err)
-              {
-                  // Valore di check messo a true
-                  error = true;
-                  console.log("GET PAGINA NON TROVATA");
-                  res.status(404).render('pag_non_trovata');
-              }
-          });
-          // Se il render iniziale ha dato esito positivo viene caricata
-          // la pagina richiesta
-          if (!error)
-          {
-              console.log("GET " + req.params.questionValue.toUpperCase());
-              res.status(200).render('topic/' + topic);
-          }
+        // Verifico che l'utente abbia effettuato l'accesso analizzando il token
+        if(token)
+        {
+            // Pagina da ricercare in base al valore inserito
+            var topicName = req.params.questionValue.toLowerCase();
+            //Cerco se il topic cercato è presente tra quelli nel file JSON
+            var topicJSON = null; 
+            var topicsJSON = JSON.parse(fs.readFileSync('FrontEnd/topic/topics.json', 'utf8'));
+            topicsJSON.topics.forEach((topic) => 
+            {
+                //Se presente lo assegno alla variabile topicJSON
+                if(topic.name == topicName) 
+                {
+                    topicJSON = topic;
+                }
+            })
+            //Se la ricerca è avvenuta con successo, ritorno il topic con le informazioni ad esso associate
+            if(topicJSON!= null)
+            {
+                console.log("GET "+ topicJSON.name.toUpperCase());
+                res.status(200).render("topic/topic", { name: topicJSON.name, question: topicJSON.question, answer: topicJSON.answer});
+            }
+            //Se il topic non è presente, ritorno la pagina di errore dove poter rieffetturare la ricerca
+            else
+            {
+                console.log("GET PAGINA NON TROVATA");
+                res.status(404).render('pag_non_trovata');
+            }
+        }
   });
   // Accesso alla segreteria
   app.use('/segreteria', apiRoutes);
@@ -163,7 +166,7 @@ var appRouter = function(app)
           }
       });
       console.log("MESSAGGIO INVIATO");
-      res.statusCode(200).redirect('home'); //Ritorno alla home dopo l'invio del messaggio
+      res.status(200).redirect('home'); //Ritorno alla home dopo l'invio del messaggio
   });
 }
 module.exports = appRouter;

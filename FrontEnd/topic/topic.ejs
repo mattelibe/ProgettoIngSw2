@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<title>laurea</title>
+	<title>erasmus</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link href="/css/bootstrap.min.css" rel="stylesheet">
 	<link href="/css/mdb.min.css" rel="stylesheet">
@@ -29,33 +29,30 @@
 						<img class="card-img-top" src="/img/logo.png" alt="Card image cap">
 					</a>
 					<div class="card-body">
-						<h2 class="card-title text-center">Topic: Laurea</h2>
+						<h2 class="card-title text-center mb-4">Topic: <%= name %></h2>
 						<h3 class="card-title text-center mb-4">Domanda:</h3>
-						<h4 class="card-titled text-center mb-4">Cos'è l'attesa di laurea ?</h4>
-						<h3 class="card-titled text-center mb-4">Risposta:</h3>
-						<h4 class="card-titled text-center mb-2">
-          	<div>
-            	<h4 class="card-titled text-center">Se prevedi di laurearti entro il 31 marzo di un dato anno accademico, ma non sei sicuro di riuscirci, puoi fare richiesta di "attesa di laurea" che ti permette di:</h4>
-						<ol class="list-group">
-							<li class="list-group-item"> La doppia laurea è un programma di studio (chiamato anche joint program), stabilito tra 2 o più università,che permette agli studenti di perseguire parte della loro carriera universitaria nell'Università degli studi di Trento e parte in una università
-								convenzionata, permettendo quindi di ottenere l'attestato italiano e quello estero nello stesso periodo.</li>
-							<li class="list-group-item"> Erasmus+ è un programma rivolto a studenti o laureandi per lo svolgimento di un periodo di tirocinio presso un’impresa, ente o centro di formazione e di ricerca in uno dei Paesi che >hanno aderito al Programma.</li>
-						</ol>
-					</div>
+						<h4 class="card-titled text-center mb-4"><%= question %> ?</h4>
+						<h3 class="card-titled text-center mb-2">Risposta:</h3>
+						<h4 class="card-titled text-center">
+          <div>
+            <ul class="list-group">
+            	<li class="list-group-item"><%= answer %></li>
+            </ul>
+          </div>
 					</h4>
-					<div>
-						<h4 class="card-titled text-center">Video Guida:</h4>
-						<video class="embed-responsive" controls="">
-            		<source src="/video/video_placeholder.mp4" type="video/mp4">
-            	</video>
-					</div>
-					<div>
-						<a href="/segreteria" class="btn btn-primary btn-large">Non hai trovato quello che cercavi ?</a>
+						<div>
+							<h4 class="card-titled text-center">Video Guida:</h4>
+							<video class="embed-responsive" controls="">
+            	<source src="/video/video_placeholder.mp4" type="video/mp4">
+            </video>
+						</div>
+						<div>
+							<a href="/segreteria" class="btn btn-primary btn-large">Non hai trovato quello che cercavi ?</a>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
 	</div>
 	<!-- SCRIPTS -->
 	<!-- JQuery -->
