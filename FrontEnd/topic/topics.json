@@ -3,22 +3,22 @@
         {
             "name": "erasmus",
             "question": "Qual'è la differenza tra doppia laurea ed erasmus+",
-            "answer": " La doppia laurea è un programma di studio (chiamato anche joint program), stabilito tra 2 o più università,che permette agli studenti di perseguire parte della loro carriera universitaria nell'Università degli studi di Trento e parte in una università convenzionata, permettendo quindi di ottenere l'attestato italiano e quello estero nello stesso periodo. L'erasmus+ è un programma rivolto a studenti o laureandi per lo svolgimento di un periodo di tirocinio presso un’impresa, ente o centro di formazione e di ricerca in uno dei Paesi che hanno aderito al Programma."
+            "answer": " La doppia laurea è un programma di studio (chiamato anche joint program), stabilito tra 2 o più università,che permette agli studenti di perseguire parte della loro carriera universitaria nell'Università degli studi di Trento e parte in una università convenzionata, permettendo quindi di ottenere l'attestato italiano e quello estero nello stesso periodo. \nL'erasmus+ è un programma rivolto a studenti o laureandi per lo svolgimento di un periodo di tirocinio presso un’impresa, ente o centro di formazione e di ricerca in uno dei Paesi che hanno aderito al Programma."
         },
         {
             "name": "laurea",
             "question": "Cos'è l'attesa di laurea",
-            "answer": "Se prevedi di laurearti entro il 31 marzo di un dato anno accademico, ma non sei sicuro di riuscirci, puoi fare richiesta di \"attesa di laurea\" che ti permette di:"
+            "answer": "Se prevedi di laurearti entro il 31 marzo di un dato anno accademico, ma non sei sicuro di riuscirci, puoi fare richiesta di \"attesa di laurea\" che ti permette di:\n Rinnovare l'iscrizione al nuovo anno accademico dopo il termine del 30 settembre ed entro il 31 marzo senza pagare la mora, nel caso in cui tu non riesca a laurearti entro quella data. \nPoter accede ai bandi per le Collaborazioni a tempo parziale degli studenti. Potrai svolgere l'attività solo dal momento in cui sarai iscritto al corso di laurea magistrale o dal momento in cui rinnoverai l'iscrizione al corso di laurea magistrale."
         },
         {
             "name": "tasse",
             "question": "Cos'è l'ISEE e come funziona",
-            "answer": "L'Ateneo ha deciso di adottare un nuovo indicatore per stabilire l'importo delle tasse, la procedura da seguire è questa: \n "
+            "answer": "Bisogna richiedere l'attestazione ISEE per le \"prestazioni agevolate per il diritto allo studio universitario\" (ISEE universitario), compilando la Dichiarazione Sostitutiva Univa (DSU) la DSU può essere compilata gratuitamente in qualsiasi CAF, in Italia oppure con le modalità indicate sul sito dell'INPS a qeusta pagina: https://www.inps.it/NuovoportaleINPS/default.aspx?itemdir=50088&lang=IT\n  Il tempo medio per il rilascio dell'attestazione dell'ISEE università, dopo aver compilato la DSU, è di circa dieci giorni lavorativi, ma può richiedere fino a 15 giorni lavorativi. L'attestazione cartacea dell'ISEE università non deve essere consegnata all'università, i dati infatti vengono trasmessi a UniTrento dall'INPS. Il tuo valore ISEE università sarà disponibile nell'area riservata di ESSE3 assieme all'importo totale delle tasse e i bollettini MAV necessari per il pagamento."
         },
         {
             "name": "tirocini",
             "question": "Come faccio a ottenere un tirocinio",
-            "answer": "Per effettuare un tirocinio è necessario aver conseguito 90 CFU per le lauree triennali e 30 CFU per le lauree magistrali. E' possibile mettersi in contatto direttamente con un professore, proponendo un progetto o un idea, preferibilmente attinente al corso di studi tenuto dal professore, oppure chiedere al professore stesso se stia cercando qualcuno per un lavoro. In questo caso le modalità e tempistiche di lavoro verranno stabilite tra tirocinante e professore, e quest'ultimo si occuperà della parte burocratica, inoltre questi progetti spesso fungono da basi per la costruzioni di una tesi di laurea. Altrimenti è possibile lavorare per un periodo limitato in un azienda, per fare ciò è necessario contattare l'ufficio JobGuidance e seguire le indicazioni ottenute da loro."
+            "answer": "Per effettuare un tirocinio è necessario aver conseguito 90 CFU per le lauree triennali e 30 CFU per le lauree magistrali. \nE' possibile mettersi in contatto direttamente con un professore, proponendo un progetto o un idea, preferibilmente attinente al corso di studi tenuto dal professore, oppure chiedere al professore stesso se stia cercando qualcuno per un lavoro. In questo caso le modalità e tempistiche di lavoro verranno stabilite tra tirocinante e professore, e quest'ultimo si occuperà della parte burocratica, inoltre questi progetti spesso fungono da basi per la costruzioni di una tesi di laurea. \nAltrimenti è possibile lavorare per un periodo limitato in un azienda, per fare ciò è necessario contattare l'ufficio JobGuidance e seguire le indicazioni ottenute da loro."
         }
     ]
 }
